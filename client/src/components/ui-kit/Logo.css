@@ -20,6 +20,13 @@
   height: 100%;
   width: auto;
   max-width: none;
+  /* The official artwork has a black background. "lighten" lets the dark panel behind it
+     show through instead, while the white letters and orange emblem keep their colours.
+     The image file itself is not modified. */
+  mix-blend-mode: lighten;
+  /* "RECYCLERS" and "WASTE MANAGEMENT COMPANY" are light grey in the artwork; extra contrast
+     turns them white. Black stays black, so the blend above still hides the background. */
+  filter: contrast(1.25) brightness(1.1);
 }
 
 /* ---- Text fallback (shown until the logo file is added) ---------------- */

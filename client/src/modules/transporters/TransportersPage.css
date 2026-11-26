@@ -1,0 +1,251 @@
+/* Layout shared by the Transporters screens. Theme variables only. All classes start with tr-. */
+.tr-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.tr-page .page-header {
+  margin-bottom: 0;
+}
+
+.tr-page .page-header__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tr-back {
+  align-self: flex-start;
+  margin-left: calc(var(--space-3) * -1);
+}
+
+.tr-two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.tr-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-width: 0;
+}
+
+.tr-stack-sm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.tr-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+@media (max-width: 1023px) {
+  .tr-two-col {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tr-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 479px) {
+  .tr-stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---- List toolbar ------------------------------------------------------- */
+.tr-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.tr-toolbar__search {
+  flex: 1 1 260px;
+  max-width: 420px;
+}
+
+.tr-toolbar__status {
+  flex: 0 1 220px;
+}
+
+.tr-toolbar__actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-left: auto;
+}
+
+@media (max-width: 639px) {
+  .tr-toolbar__search,
+  .tr-toolbar__status {
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .tr-toolbar__actions {
+    margin-left: 0;
+  }
+}
+
+.tr-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: var(--font-weight-semibold);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tr-link:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* ---- Table cells -------------------------------------------------------- */
+.tr-cell-strong {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.tr-cell-sub {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.tr-cell-wrap {
+  display: block;
+  min-width: 180px;
+  white-space: normal;
+}
+
+.tr-nowrap {
+  white-space: nowrap;
+}
+
+.tr-mono {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+/* ---- Details lists ------------------------------------------------------ */
+.tr-details {
+  display: grid;
+  grid-template-columns: minmax(120px, max-content) minmax(0, 1fr);
+  gap: var(--space-2) var(--space-4);
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+.tr-details dt {
+  color: var(--color-text-muted);
+}
+
+.tr-details dd {
+  margin: 0;
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}
+
+.tr-details a {
+  color: var(--color-primary);
+}
+
+.tr-muted {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.tr-meta {
+  margin: var(--space-2) 0 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.tr-subheading {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.tr-subheading--icon {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.tr-pending-box,
+.tr-rejected-box {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.tr-pending-box {
+  background: var(--color-warning-soft);
+}
+
+.tr-rejected-box {
+  background: var(--color-danger-soft);
+}
+
+.tr-actions,
+.tr-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* ---- Add / edit form ---------------------------------------------------- */
+.tr-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tr-form__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+@media (max-width: 639px) {
+  .tr-form__row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.tr-form__divider {
+  width: 100%;
+  margin: var(--space-1) 0 0;
+  border: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.tr-form__section {
+  margin: 0;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.tr-form__note {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}

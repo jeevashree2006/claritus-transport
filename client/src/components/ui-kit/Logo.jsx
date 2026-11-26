@@ -11,7 +11,7 @@ import './Logo.css';
  *            'mark'  - emblem only (collapsed sidebar, small spaces)
  *   size     'sm' | 'md' | 'lg'  - controls the logo height
  */
-export const LOGO_SRC = '/brand/claritas-logo.svg';
+export const LOGO_SRC = '/brand/claritas-logo.jpg'; // official Claritas Recyclers artwork, used unmodified
 export const LOGO_MARK_SRC = '/brand/claritas-mark.svg';
 
 export function Logo({ variant = 'full', size = 'md', className = '' }) {
