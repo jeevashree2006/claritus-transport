@@ -12,7 +12,7 @@ export default function StageBars({ items = [] }) {
         <li key={item.stage} className="stage-bars__row">
           <span className="stage-bars__label">
             <span className="stage-bars__step" aria-hidden="true">
-              {index + 1}
+              {item.no ?? index + 1}
             </span>
             {item.stage}
           </span>

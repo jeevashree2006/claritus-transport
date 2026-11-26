@@ -6,21 +6,87 @@
 
 /* ---- Brand panel -------------------------------------------------------- */
 .login__brand {
+  position: relative;
+  isolation: isolate; /* keeps the background layers (z-index -1) inside this panel */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: var(--space-10);
+  justify-content: flex-start;
+  gap: var(--space-6);
   padding: var(--space-10) var(--space-12);
   background: var(--color-secondary);
   color: var(--color-on-secondary);
 }
 
-.login__logo {
-  --logo-height: 72px;
+/* Photo: slow drift and zoom (Ken Burns). */
+.login__scene {
+  position: absolute;
+  inset: -6%;
+  z-index: -3;
+  background: url('/brand/login-hero.jpg') 48% 40% / cover no-repeat;
+  animation: login-drift 28s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
+/* Soft light sweeping across the sky. */
+.login__sheen {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    color-mix(in srgb, var(--color-on-secondary) 14%, transparent) 50%,
+    transparent 70%
+  );
+  background-size: 250% 100%;
+  animation: login-sheen 9s ease-in-out infinite;
+}
+
+/* Navy overlay in the app's theme colour: dark behind the logo and the text, lighter in the
+   middle so the recycling symbol stays visible. */
+.login__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-secondary) 96%, transparent) 0%,
+    color-mix(in srgb, var(--color-secondary) 90%, transparent) 18%,
+    color-mix(in srgb, var(--color-secondary) 30%, transparent) 30%,
+    color-mix(in srgb, var(--color-secondary) 12%, transparent) 42%,
+    color-mix(in srgb, var(--color-secondary) 70%, transparent) 62%,
+    color-mix(in srgb, var(--color-secondary) 96%, transparent) 82%
+  );
+}
+
+/* No animation on the logo: an animated transform/opacity would give it its own layer,
+   and its black background could then no longer blend into the panel.
+   Large enough that "RECYCLERS" and "WASTE MANAGEMENT COMPANY" are readable; the size
+   follows the panel width (the panel is 5/11 of the screen). */
+.login__logo {
+  --logo-height: clamp(64px, 7.5vw, 108px);
+}
+
+/* Text sits at the bottom so the recycling symbol stays visible in the middle. */
 .login__pitch {
-  max-width: 460px;
+  max-width: 480px;
+  margin-top: auto;
+}
+
+.login__eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid color-mix(in srgb, var(--color-on-secondary) 35%, transparent);
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--color-secondary) 45%, transparent);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-on-secondary);
+  animation: login-rise 0.7s 0.15s ease-out both;
 }
 
 .login__headline {
@@ -28,17 +94,66 @@
   font-weight: var(--font-weight-bold);
   line-height: 1.2;
   color: var(--color-on-secondary);
+  text-shadow: 0 2px 12px color-mix(in srgb, var(--color-secondary) 60%, transparent);
+  animation: login-rise 0.8s 0.3s ease-out both;
 }
 
 .login__tagline {
   margin-top: var(--space-4);
   font-size: var(--font-size-lg);
-  color: var(--color-on-secondary-muted);
+  line-height: var(--line-height-base);
+  color: var(--color-on-secondary);
+  opacity: 0.88;
+  animation: login-rise 0.8s 0.45s ease-out both;
 }
 
 .login__footnote {
   font-size: var(--font-size-xs);
   color: var(--color-on-secondary-muted);
+}
+
+@keyframes login-drift {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.12) translate3d(-2.5%, -2%, 0);
+  }
+}
+
+@keyframes login-sheen {
+  0% {
+    background-position: 120% 0;
+  }
+  60%,
+  100% {
+    background-position: -120% 0;
+  }
+}
+
+@keyframes login-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Respect "reduce motion": keep the image, drop the movement. */
+@media (prefers-reduced-motion: reduce) {
+  .login__scene,
+  .login__sheen,
+  .login__eyebrow,
+  .login__headline,
+  .login__tagline {
+    animation: none;
+  }
+  .login__sheen {
+    display: none;
+  }
 }
 
 /* ---- Form panel --------------------------------------------------------- */
@@ -102,7 +217,7 @@
   }
 
   .login__logo {
-    --logo-height: 44px;
+    --logo-height: 56px;
   }
 
   .login__headline {

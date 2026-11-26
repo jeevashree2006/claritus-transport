@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { ClipboardList, Plus, RefreshCw } from 'lucide-react';
 import { Alert, Button, EmptyState, Loader, PageHeader, Table } from '../../../components/ui-kit';
 import { getErrorMessage } from '../../../services/api';
+import RequirementsExportButton from '../components/RequirementsExportButton';
 import StageBadge from '../components/StageBadge';
 import { requirementsService } from '../services/requirementsService';
 import { formatDate, formatDateTime, formatNumber, formatTonnes } from '../utils/format';
@@ -115,6 +116,7 @@ export default function RequirementList({ nav }) {
             </Button>
           ))}
         </div>
+        <RequirementsExportButton items={items} filter={filter} />
         <Button
           variant="ghost"
           size="sm"

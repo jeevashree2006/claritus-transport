@@ -59,15 +59,23 @@ export default function LoginPage() {
   return (
     <div className="login">
       <aside className="login__brand">
+        {/* Decorative animated background: photo, light sweep and navy overlay for legibility. */}
+        <div className="login__scene" aria-hidden="true" />
+        <div className="login__sheen" aria-hidden="true" />
+        <div className="login__overlay" aria-hidden="true" />
+
         <Logo size="lg" className="login__logo" />
         <div className="login__pitch">
-          <h1 className="login__headline">From requirement to closed trip, in one place.</h1>
+          <p className="login__eyebrow">Transport management platform</p>
+          <h1 className="login__headline">Every load, every transporter, one accountable workflow.</h1>
           <p className="login__tagline">
-            Plan loads, compare transporter rates, follow every trip and settle payments, with AI agents doing the
-            legwork and your team approving what matters.
+            Source transporters, approve rates, track each trip to delivery and settle payments with confidence –
+            with a complete audit trail and approvals at every step.
           </p>
         </div>
-        <p className="login__footnote">© {new Date().getFullYear()} Claritas Transport</p>
+        <p className="login__footnote">
+          © {new Date().getFullYear()} Claritas Recyclers · Responsible waste management
+        </p>
       </aside>
 
       <main className="login__panel">

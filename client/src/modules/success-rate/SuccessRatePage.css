@@ -1,0 +1,100 @@
+/* Success rate module (transporter participation). Theme variables only (client/src/styles/theme.css). */
+
+.sr {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  transition: opacity var(--transition-base);
+}
+
+.sr--loading {
+  opacity: 0.6;
+}
+
+.sr > .page-header {
+  margin-bottom: 0;
+}
+
+.sr-period {
+  min-width: 190px;
+}
+
+.sr-retry {
+  margin-top: var(--space-4);
+}
+
+.sr-help {
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-base);
+}
+
+.sr-card-body--table .table-wrap {
+  width: auto;
+  max-width: none;
+  margin: 0 calc(-1 * var(--space-5)) calc(-1 * var(--space-5));
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---- Transporter cell --------------------------------------------------- */
+.sr-transporter {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sr-transporter__name {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.sr-transporter__city {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* ---- Rate bar ----------------------------------------------------------- */
+.rate-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 150px;
+}
+
+.rate-bar__value {
+  min-width: 3.2em;
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--font-weight-medium);
+}
+
+.rate-bar__track {
+  flex: 1;
+  height: 8px;
+  min-width: 80px;
+  border-radius: var(--radius-full);
+  background: var(--color-neutral-soft);
+  overflow: hidden;
+}
+
+.rate-bar__fill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-full);
+}
+
+.rate-bar__fill--success {
+  background: var(--color-success);
+}
+
+.rate-bar__fill--warning {
+  background: var(--color-warning);
+}
+
+.rate-bar__fill--primary {
+  background: var(--color-primary);
+}
+
+.rate-bar__empty {
+  color: var(--color-text-muted);
+}
