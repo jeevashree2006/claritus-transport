@@ -1,0 +1,137 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: calc(var(--z-sidebar) - 1);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: var(--topbar-height);
+  padding: 0 var(--space-8);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.topbar__menu {
+  display: none;
+}
+
+/* ---- Search (visual only) ----------------------------------------------- */
+.topbar__search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+}
+
+.topbar__search-icon {
+  position: absolute;
+  left: var(--space-4);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.topbar__search-input {
+  width: 100%;
+  height: var(--control-height-md);
+  padding: 0 var(--space-4) 0 calc(var(--space-4) + 16px + var(--space-2));
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  font-size: var(--font-size-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.topbar__search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.topbar__search-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: var(--color-surface);
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+}
+
+.topbar__spacer {
+  flex: 1;
+}
+
+/* ---- Right side --------------------------------------------------------- */
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.topbar__bell {
+  position: relative;
+}
+
+/* Small unread dot on the bell. */
+.topbar__bell::after {
+  content: '';
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--color-surface);
+  border-radius: 50%;
+  background: var(--color-danger);
+}
+
+.topbar__user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 0 var(--space-2) 0 var(--space-3);
+  border-left: 1px solid var(--color-border);
+}
+
+.topbar__user-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
+}
+
+.topbar__user-name {
+  font-weight: var(--font-weight-semibold);
+  white-space: nowrap;
+}
+
+.topbar__user-role {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+  .topbar {
+    padding: 0 var(--space-6);
+  }
+}
+
+/* ---- Mobile: hamburger shown, search and name hidden -------------------- */
+@media (max-width: 767px) {
+  .topbar {
+    padding: 0 var(--space-3);
+    gap: var(--space-1);
+  }
+
+  .topbar__menu {
+    display: inline-flex;
+    color: var(--color-text);
+  }
+
+  .topbar__search,
+  .topbar__user-text {
+    display: none;
+  }
+
+  .topbar__user {
+    padding: 0 var(--space-1) 0 var(--space-2);
+  }
+}

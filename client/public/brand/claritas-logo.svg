@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="222" viewBox="0 0 900 222" role="img" aria-label="Claritas Recyclers - Waste management company">
+  <!-- Claritas Recyclers logo (redrawn as SVG). White + orange, made for dark backgrounds. -->
+  <!-- Emblem: orange loop, white C, orange disc with paper plane -->
+  <path d="M196 98 C172 80 150 78 133.5 90 A56 56 0 1 0 133.5 146 C150 158 172 156 196 138" fill="none" stroke="#F47B20" stroke-width="22" stroke-linejoin="round"/>
+  <path d="M285.5 51.9 A92 92 0 1 0 285.5 170.1" fill="none" stroke="#FFFFFF" stroke-width="26"/>
+  <circle cx="234" cy="116" r="48" fill="#F47B20"/>
+  <path d="M205 122 L263 93 L242 146 L230 128 Z" fill="#FFFFFF"/>
+  <path d="M230 128 L263 93 L226 140 Z" fill="#F9C9A3"/>
+
+  <!-- Wordmark -->
+  <text x="318" y="128" textLength="572" lengthAdjust="spacingAndGlyphs"
+        font-family="'Arial Black', 'Segoe UI Black', 'Helvetica Neue', Arial, sans-serif"
+        font-weight="900" font-size="118" fill="#FFFFFF">LARITAS</text>
+  <text x="508" y="172" textLength="382" lengthAdjust="spacing"
+        font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-weight="500" font-size="34" fill="#FFFFFF">RECYCLERS</text>
+  <rect x="424" y="184" width="466" height="1.5" fill="#FFFFFF" opacity="0.45"/>
+  <text x="424" y="214" textLength="466" lengthAdjust="spacing"
+        font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif"
+        font-weight="500" font-size="26" fill="#FFFFFF">WASTE MANAGEMENT COMPANY</text>
+</svg>

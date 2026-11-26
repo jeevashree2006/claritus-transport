@@ -1,0 +1,125 @@
+.login {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  min-height: 100vh;
+}
+
+/* ---- Brand panel -------------------------------------------------------- */
+.login__brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-10);
+  padding: var(--space-10) var(--space-12);
+  background: var(--color-secondary);
+  color: var(--color-on-secondary);
+}
+
+.login__logo {
+  --logo-height: 72px;
+}
+
+.login__pitch {
+  max-width: 460px;
+}
+
+.login__headline {
+  font-size: 2.25rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+  color: var(--color-on-secondary);
+}
+
+.login__tagline {
+  margin-top: var(--space-4);
+  font-size: var(--font-size-lg);
+  color: var(--color-on-secondary-muted);
+}
+
+.login__footnote {
+  font-size: var(--font-size-xs);
+  color: var(--color-on-secondary-muted);
+}
+
+/* ---- Form panel --------------------------------------------------------- */
+.login__panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-10) var(--space-6);
+  background: var(--color-surface);
+}
+
+.login__card {
+  width: 100%;
+  max-width: 380px;
+}
+
+.login__header {
+  margin-bottom: var(--space-6);
+}
+
+.login__title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.login__subtitle {
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.login__form .btn {
+  margin-top: var(--space-2);
+}
+
+/* ---- Tablet: narrower brand panel --------------------------------------- */
+@media (max-width: 1023px) {
+  .login__brand {
+    padding: var(--space-8);
+  }
+  .login__headline {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* ---- Mobile: brand panel stacks above the form -------------------------- */
+@media (max-width: 767px) {
+  .login {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+  }
+
+  .login__brand {
+    gap: var(--space-5);
+    padding: var(--space-6) var(--space-5);
+  }
+
+  .login__logo {
+    --logo-height: 44px;
+  }
+
+  .login__headline {
+    font-size: var(--font-size-xl);
+  }
+
+  .login__tagline {
+    margin-top: var(--space-2);
+    font-size: var(--font-size-sm);
+  }
+
+  .login__footnote {
+    display: none;
+  }
+
+  .login__panel {
+    align-items: flex-start;
+    padding: var(--space-8) var(--space-5);
+  }
+}

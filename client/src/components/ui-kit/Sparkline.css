@@ -1,0 +1,16 @@
+.sparkline {
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.sparkline__line {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sparkline__area {
+  fill: currentColor;
+  opacity: 0.1;
+}
