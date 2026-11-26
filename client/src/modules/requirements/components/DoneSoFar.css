@@ -1,0 +1,30 @@
+.done-so-far {
+  margin: 0;
+}
+
+.done-so-far__row {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--font-size-sm);
+}
+
+.done-so-far__row:last-child {
+  border-bottom: 0;
+}
+
+.done-so-far__row dt {
+  color: var(--color-text-muted);
+}
+
+.done-so-far__row dd {
+  margin: 0;
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}
+
+.done-so-far__empty {
+  color: var(--color-text-muted);
+}

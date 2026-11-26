@@ -1,0 +1,49 @@
+.logo {
+  --logo-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: var(--logo-height);
+}
+
+.logo--sm {
+  --logo-height: 28px;
+}
+.logo--md {
+  --logo-height: 36px;
+}
+.logo--lg {
+  --logo-height: 52px;
+}
+
+.logo__img {
+  height: 100%;
+  width: auto;
+  max-width: none;
+}
+
+/* ---- Text fallback (shown until the logo file is added) ---------------- */
+.logo--fallback {
+  gap: var(--space-2);
+  color: var(--color-on-secondary);
+}
+
+.logo__fallback-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--logo-height);
+  height: var(--logo-height);
+  border-radius: var(--radius-sm);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: calc(var(--logo-height) * 0.5);
+}
+
+.logo__fallback-text {
+  font-weight: var(--font-weight-bold);
+  font-size: calc(var(--logo-height) * 0.5);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

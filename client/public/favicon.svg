@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Claritas emblem on a navy tile -->
+  <rect width="32" height="32" rx="7" fill="#0F1E3D"/>
+  <g transform="translate(1.5 4.5) scale(0.097)">
+    <path d="M196 98 C172 80 150 78 133.5 90 A56 56 0 1 0 133.5 146 C150 158 172 156 196 138" fill="none" stroke="#F47B20" stroke-width="22" stroke-linejoin="round"/>
+    <path d="M285.5 51.9 A92 92 0 1 0 285.5 170.1" fill="none" stroke="#FFFFFF" stroke-width="26"/>
+    <circle cx="234" cy="116" r="48" fill="#F47B20"/>
+    <path d="M205 122 L263 93 L242 146 L230 128 Z" fill="#FFFFFF"/>
+  </g>
+</svg>

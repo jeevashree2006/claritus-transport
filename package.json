@@ -1,0 +1,20 @@
+{
+  "name": "claritas-transport",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Claritas Transport - Transportation Management System (foundation)",
+  "scripts": {
+    "install:all": "npm install && npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently --names server,client --prefix-colors blue,green --kill-others-on-fail \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "db:migrate": "npm run db:migrate --prefix server",
+    "db:seed": "npm run db:seed --prefix server",
+    "db:setup": "npm run db:setup --prefix server",
+    "build": "npm run build --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "engines": {
+    "node": ">=18.18"
+  }
+}

@@ -1,0 +1,129 @@
+/* Layout shared by the Requirements screens. Theme variables only. */
+.req-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.req-page .page-header {
+  margin-bottom: 0;
+}
+
+.req-back {
+  align-self: flex-start;
+  margin-left: calc(var(--space-3) * -1);
+}
+
+.req-two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.req-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-width: 0;
+}
+
+@media (max-width: 1023px) {
+  .req-two-col {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---- List ---------------------------------------------------------------- */
+.req-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.req-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.req-cell-strong {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.req-cell-sub {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.req-cell-wrap {
+  white-space: normal;
+  min-width: 180px;
+}
+
+/* ---- Form ---------------------------------------------------------------- */
+.req-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.req-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.req-form-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.req-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+}
+
+.req-optional {
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 767px) {
+  .req-form-grid,
+  .req-form-grid--3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .req-form-actions .btn {
+    flex: 1;
+  }
+}
+
+/* ---- Detail -------------------------------------------------------------- */
+.req-detail-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.req-detail-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.req-detail-sub {
+  margin-top: var(--space-1);
+  color: var(--color-text-muted);
+}
+
+.req-next-hint {
+  color: var(--color-text-muted);
+}

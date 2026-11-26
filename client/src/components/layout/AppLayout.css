@@ -1,0 +1,50 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-layout__main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0; /* lets wide children (tables) scroll instead of stretching the page */
+}
+
+.app-layout__content {
+  flex: 1;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-8);
+}
+
+.app-layout__content:focus {
+  outline: none;
+}
+
+.app-layout__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  background: var(--color-overlay);
+  animation: overlay-fade var(--transition-base);
+}
+
+@media (max-width: 1023px) {
+  .app-layout__content {
+    padding: var(--space-6);
+  }
+}
+
+@media (max-width: 767px) {
+  .app-layout__content {
+    padding: var(--space-4);
+  }
+}
+
+@keyframes overlay-fade {
+  from {
+    opacity: 0;
+  }
+}
