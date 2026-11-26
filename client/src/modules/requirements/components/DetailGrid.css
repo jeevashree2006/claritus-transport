@@ -1,0 +1,22 @@
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-4) var(--space-5);
+  margin: 0;
+}
+
+.detail-grid__item {
+  min-width: 0;
+}
+
+.detail-grid__label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.detail-grid__value {
+  margin: 2px 0 0;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}

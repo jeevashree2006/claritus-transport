@@ -10,6 +10,7 @@ import { env, isProduction } from './config/env.js';
 import { errorHandler, notFound } from './middleware/errorHandler.js';
 import authRoutes from './modules/auth/auth.routes.js';
 import healthRoutes from './modules/health/health.routes.js';
+import requirementRoutes from './modules/requirements/requirements.routes.js';
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(morgan(isProduction ? 'combined' : 'dev'));
 // ---- Routes ---------------------------------------------------------------
 app.use('/api/health', healthRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/requirements', requirementRoutes);
 // app.use('/api/transporters', transporterRoutes);   <- future modules go here
 
 // ---- Errors (keep last) ---------------------------------------------------
